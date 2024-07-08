@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OrB-Hl-5Ag">
+                                <rect key="frame" x="123.66666666666669" y="70" width="128" height="128"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9cH-5P-Hyz"/>
+                                    <constraint firstAttribute="width" secondItem="OrB-Hl-5Ag" secondAttribute="height" multiplier="1:1" id="dr9-tq-cBB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaB-cF-Fo7">
+                                <rect key="frame" x="123.66666666666669" y="218" width="128" height="128"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="YGn-aI-zDQ"/>
+                                    <constraint firstAttribute="width" secondItem="AaB-cF-Fo7" secondAttribute="height" multiplier="1:1" id="e1U-ox-bZj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-FG-lBq">
+                                <rect key="frame" x="123.66666666666669" y="366" width="128" height="128"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JrS-FG-lBq" secondAttribute="height" multiplier="1:1" id="6Nx-pW-uzs"/>
+                                    <constraint firstAttribute="height" constant="128" id="tRA-zl-hHH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJk-rn-m7D">
+                                <rect key="frame" x="127.66666666666669" y="724" width="120" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="T5Y-Eu-8Wg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="START"/>
+                                <connections>
+                                    <action selector="trafficLightButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUo-ZR-XWZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                        <constraints>
+                            <constraint firstItem="OrB-Hl-5Ag" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6hh-P0-Mca"/>
+                            <constraint firstItem="xJk-rn-m7D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8I7-vx-Plh"/>
+                            <constraint firstItem="JrS-FG-lBq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T2g-Bs-CXG"/>
+                            <constraint firstItem="AaB-cF-Fo7" firstAttribute="top" secondItem="OrB-Hl-5Ag" secondAttribute="bottom" constant="20" id="a8h-xD-0dA"/>
+                            <constraint firstItem="OrB-Hl-5Ag" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tZT-LU-v4b"/>
+                            <constraint firstItem="JrS-FG-lBq" firstAttribute="top" secondItem="AaB-cF-Fo7" secondAttribute="bottom" constant="20" id="wf9-b4-zwV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xJk-rn-m7D" secondAttribute="bottom" constant="20" id="xYL-Qn-xlE"/>
+                            <constraint firstItem="AaB-cF-Fo7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zav-ZN-D0Y"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="trafficLightViews" destination="OrB-Hl-5Ag" collectionClass="NSMutableArray" id="gcZ-sa-UaI"/>
+                        <outletCollection property="trafficLightViews" destination="AaB-cF-Fo7" collectionClass="NSMutableArray" id="s6t-hP-M5R"/>
+                        <outletCollection property="trafficLightViews" destination="JrS-FG-lBq" collectionClass="NSMutableArray" id="diq-TW-LJq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-489.3129770992366" y="-8.4507042253521139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
